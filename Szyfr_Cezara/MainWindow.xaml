@@ -1,0 +1,101 @@
+﻿<Window x:Class="Szyfr_Cezara.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Szyfr_Cezara"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#4682B4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Szyfr Cezara" 
+                   VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   FontWeight="Bold" FontSize="25" FontStyle="Italic" ></TextBlock>
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="0,1,0,1"></Border>
+
+        <TextBlock Grid.Row="1" Name="AlertText" Text=""
+                   FontWeight="Bold" Foreground="Red" FontSize="16"
+                   HorizontalAlignment="Center" Margin="0,20,0,0"></TextBlock>
+        <TextBlock Grid.Row="1" Text="Wyraz do zaszyfrowania :" 
+                   FontWeight="Bold" VerticalAlignment="Center" 
+                   HorizontalAlignment="Left" Margin="100,0,0,50"></TextBlock>
+        <TextBox  Grid.Row="1" Name="inputBasicText" 
+                  Height="30" Width="150" VerticalContentAlignment="Center" 
+                  HorizontalAlignment="Left" Margin="100,0,0,0"/>
+        <Button Grid.Row="1" Content="&#x2192;" 
+                VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                HorizontalAlignment="Center" Height="50" Width="100" 
+                FontSize="25" FontWeight="Bold" Click="trimEncryptedText_Click"
+                Margin="0,0,147,0" Padding="0,0,0,0"></Button>
+        <TextBlock Grid.Row="1" Text="Szyfrowany wyraz :" 
+                   FontWeight="Bold" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Margin="110,0,0,50"></TextBlock>
+        <TextBox Grid.Row="1" Name="encryptedText" 
+                 Height="30" Width="150" VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Center" Margin="200,0,50,0"></TextBox>
+        <TextBlock Grid.Row="1" Text="Przesunięcie :" 
+           FontWeight="Bold" VerticalAlignment="Center" 
+           HorizontalAlignment="Right" Margin="0,0,107,50"></TextBlock>
+        <TextBox Grid.Row="1" Name="shiftOfEncryptedText" 
+                 Height="30" Width="100" VerticalContentAlignment="Center" 
+                 HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+                 Margin="0,0,85,0"></TextBox>
+        <Button Grid.Row="1" Content="-" 
+                VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Width="30" Height="30" Click="DecreaseShiftEncryptedButton_Click" 
+                Margin="0,0,190,0"></Button>
+        <Button Grid.Row="1" Content="+" 
+                VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Width="30" Height="30" Click="IncreaseShiftEncryptedButton_Click" 
+                Margin="0,0,50,0"></Button>
+        <Button Grid.Row="1" Content="Szyfrowanie" 
+                VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Height="50" Width="150" FontSize="15" FontWeight="Bold" 
+                Margin="0,100,60,0" Click="Encryption_Click"></Button>
+
+        <Rectangle Grid.Row="2"  Stroke="Black" 
+                   StrokeDashArray="2 2" VerticalAlignment="Top"></Rectangle>
+        <TextBlock Grid.Row="2" Text="Wyraz do odszyfrowania :" 
+                   FontWeight="Bold" VerticalAlignment="Center" 
+                   HorizontalAlignment="Left" Margin="100,0,0,50"></TextBlock>
+        <TextBox Grid.Row="2" Name="inputEncryptedText" 
+                 Height="30" Width="150" 
+                 VerticalContentAlignment="Center" HorizontalAlignment="Left" 
+                 Margin="100,0,0,0"></TextBox>
+        <Button Grid.Row="2" Content="&#x2192;" 
+                VerticalAlignment="Center" VerticalContentAlignment="Center" 
+                HorizontalAlignment="Center" Height="50" Width="100" 
+                FontSize="25" FontWeight="Bold" Click="trimDecryptedText_Click"
+                Margin="0,0,147,0" Padding="0,0,0,0"></Button>
+        <TextBlock Grid.Row="2" Text="Deszyfrowany wyraz :" 
+                FontWeight="Bold" VerticalAlignment="Center" 
+                HorizontalAlignment="Center" Margin="120,0,0,50"></TextBlock>
+        <TextBox Grid.Row="2" Name="decryptedText" 
+                Height="30" Width="150" VerticalContentAlignment="Center" 
+                HorizontalAlignment="Center" Margin="200,0,50,0"></TextBox>
+        <TextBlock Grid.Row="2" Text="Przesunięcie :"
+                FontWeight="Bold" VerticalAlignment="Center" 
+                HorizontalAlignment="Right" Margin="0,0,107,50"></TextBlock>
+        <TextBox Grid.Row="2" Name="shiftOfDecryptedText" 
+                Height="30" Width="100" VerticalContentAlignment="Center" 
+                HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+                Margin="0,0,85,0"></TextBox>
+        <Button Grid.Row="2" Content="-" 
+                VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Width="30" Height="30" Click="DecreaseShiftDecryptedButton_Click" 
+                Margin="0,0,190,0"></Button>
+        <Button Grid.Row="2" Content="+" 
+                VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Width="30" Height="30" Click="IncreaseShiftDecryptedButton_Click" 
+                Margin="0,0,50,0"></Button>
+        <Button Grid.Row="2" Content="Deszyfrowanie" 
+                VerticalAlignment="Center" HorizontalAlignment="Right" 
+                Height="50" Width="150" FontSize="15" FontWeight="Bold" 
+                Margin="0,100,60,0" Click="Decryption_Click"></Button>
+    </Grid>
+</Window>
